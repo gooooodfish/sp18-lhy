@@ -1,4 +1,4 @@
-public class LinkedListDeque<Item>  {
+public class LinkedListDeque<Item> implements Deque<Item>{
 
     /**
      * Intnode constructor
@@ -38,6 +38,7 @@ public class LinkedListDeque<Item>  {
         size = 1;
     }
 
+    @Override
     public void addLast(Item T) {
         Intnode t = new Intnode(null, T, null);
         Intnode p = sentinel.prev;
@@ -48,6 +49,7 @@ public class LinkedListDeque<Item>  {
         size += 1;
     }
 
+    @Override
     public void addFirst(Item T) {
         Intnode t = new Intnode(null, T, null);
         Intnode n = sentinel.next;
@@ -58,6 +60,7 @@ public class LinkedListDeque<Item>  {
         size += 1;
     }
 
+    @Override
     public boolean isEmpty() {
         if (size == 0) {
             return true;
@@ -65,6 +68,7 @@ public class LinkedListDeque<Item>  {
         return false;
     }
 
+    @Override
     public void printDeque() {
         Intnode p = sentinel.next;
         while (p != sentinel) {
@@ -73,6 +77,7 @@ public class LinkedListDeque<Item>  {
         }
     }
 
+    @Override
     public Item removeLast() {
         Item l = sentinel.prev.item;
         Intnode pp = sentinel.prev.prev;
@@ -82,6 +87,7 @@ public class LinkedListDeque<Item>  {
         return l;
     }
 
+    @Override
     public Item removeFirst() {
         Item f = sentinel.next.item;
         Intnode nn = sentinel.next.next;
@@ -91,6 +97,7 @@ public class LinkedListDeque<Item>  {
         return f;
     }
 
+    @Override
     public Item get(int index) {
         int i = 0;
         Intnode p = sentinel.next;
