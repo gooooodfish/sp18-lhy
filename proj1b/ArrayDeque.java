@@ -88,14 +88,14 @@ public class ArrayDeque<Item> implements Deque<Item> {
 
     @Override
     public Item removeLast() {
-        if (size <= items.length / 4) {
+        if (size <= items.length / 4 & size >=16 ){
             resize(size / 2);
         }
         int rear = (rp - 1 + items.length) % items.length;
         if (!this.isEmpty()) {
             Item a = items[rear];
             items[rear] = null;
-            size = size -1;
+            size = size - 1;
             rp = (rp - 1 + items.length) % items.length;
             return a;
         }
@@ -104,7 +104,7 @@ public class ArrayDeque<Item> implements Deque<Item> {
 
     @Override
     public Item removeFirst() {
-        if (size <= items.length / 4) {
+        if (size <= items.length / 4 & size >=16 ){
             resize(size / 2);
         }
         int front = (fp + 1) % items.length;

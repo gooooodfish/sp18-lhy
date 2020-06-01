@@ -11,11 +11,11 @@ public class IntList {
     /**
      * First element of list.
      */
-    private int first;
+    public int first;
     /**
      * Remaining elements of list.
      */
-    private IntList rest;
+    public IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
@@ -81,29 +81,8 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        if (B == null) {
-            return A;
-        }
-        if (A == null) {
-            A = new IntList(B.first, null);
-            IntList bptr = A;
-            B = B.rest;
-            while (B != null) {
-                bptr.rest = new IntList(B.first, null);
-                B = B.rest;
-                bptr = bptr.rest;
-            }
-            return A;
-        }
-        IntList ptr = A;
-        while (B != null) {
-            ptr.rest = new IntList(B.first, null);
-            B = B.rest;
-            ptr = ptr.rest;
-        }
-
-
-        return A;
+        //TODO:  fill in method
+        return null;
     }
 
     /**
@@ -111,31 +90,8 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        if (A == null) {
-            IntList bres = new IntList(B.first, null);
-            IntList bptr = bres;
-            B = B.rest;
-            while (B != null) {
-                bptr.rest = new IntList(B.first, null);
-                B = B.rest;
-                bptr = bptr.rest;
-            }
-            return bres;
-        }
-        IntList res = new IntList(A.first, null);
-        IntList ptr = res;
-        A = A.rest;
-        while (A != null) {
-            ptr.rest = new IntList(A.first, null);
-            A = A.rest;
-            ptr = ptr.rest;
-        }
-        while (B != null) {
-            ptr.rest = new IntList(B.first, null);
-            B = B.rest;
-            ptr = ptr.rest;
-        }
-        return res;
+        //TODO:  fill in method
+        return null;
     }
 
 
