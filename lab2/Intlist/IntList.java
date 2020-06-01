@@ -138,11 +138,9 @@ public class IntList {
             }
             return bres;
         }
-        IntList res = new IntList(A.first, null);
-        IntList ptr = res;
-        A = A.rest;
-        while (A != null) {
-            ptr.rest = new IntList(A.first, null);
+
+        IntList ptr = A;
+        while (ptr.rest != null) {
             A = A.rest;
             ptr = ptr.rest;
         }
@@ -151,7 +149,7 @@ public class IntList {
             B = B.rest;
             ptr = ptr.rest;
         }
-        return res;
+        return A;
     }
 
 
